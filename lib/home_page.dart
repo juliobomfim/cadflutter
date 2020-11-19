@@ -12,17 +12,28 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: GestureDetector(
-          child: Text('Contador: $counter'),
-          onTap: () {
-            setState(() {
-              counter++;
-            });
-          }
-        )
-      ),
-    );
+   return Scaffold(
+     appBar: AppBar(
+       title: Text("MAGICDEX")
+       ),
+     body: Center(
+       child: GestureDetector(
+         child: Text('Contador: $counter',
+         style: TextStyle(fontSize: 20)),
+         onTap: () {
+           setState(() {
+             counter++;
+           });
+         }),
+     ),
+      floatingActionButton: FloatingActionButton(
+         child: Icon(Icons.add),
+         onPressed: () {
+           setState(() {
+             counter++;
+           });
+         },
+       ),
+   );
   }
 }
